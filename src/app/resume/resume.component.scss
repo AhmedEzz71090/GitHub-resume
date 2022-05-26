@@ -1,0 +1,45 @@
+.container {
+  width: 60rem;
+  margin-top: 8rem;
+  background-color: #d5d8dc;
+  padding: 1.5rem 6.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  header {
+    margin: 2.5em 0 3em 0;
+    padding-bottom: 1.5em;
+  }
+
+  .repos {
+    .section-data {
+      .single-repo {
+        padding-bottom: 16px 0;
+        &:last-of-type {
+          border: none !important;
+        }
+
+        .repo-header {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            text-decoration: none;
+          }
+        }
+
+      }
+    }
+  }
+
+
+
+  .section-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1E2D40;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #1E2D40 !important;
+}
