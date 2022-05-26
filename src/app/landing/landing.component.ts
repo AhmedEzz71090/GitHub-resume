@@ -18,6 +18,7 @@ export class LandingComponent implements OnInit {
   }
 
   generate(): void {
+    // URL is the link typed in the input
     this.http.request('GET', `${this.url}`).subscribe((res: any) => {
       this.service.data = res;
       this.router.navigate(['/resume']);
