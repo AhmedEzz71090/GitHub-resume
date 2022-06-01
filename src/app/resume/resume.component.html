@@ -1,6 +1,10 @@
+<!--<div class="container">-->
+<!--  <h1>{{data?.name}}</h1>-->
+<!--</div>-->
+
 <div class="container">
   <header class="border-bottom">
-    <h1>{{data.name}}</h1>
+    <h1>{{data?.name}}</h1>
     <h5>PASSIONATE GITHUB USER</h5>
   </header>
 
@@ -15,17 +19,17 @@
   <div class="website row">
     <div class="section-label col-3">Website</div>
     <div class="section-data col-9">
-      <a [href]="data.blogUrl">data.blogUrl</a>
+      <a [href]="data?.blogUrl">data.blogUrl</a>
     </div>
   </div>
 
   <div class="languages row border-bottom py-2">
     <div class="section-label col-3">Languages</div>
     <div class="section-data col-9">
-      <ng-container *ngFor="let language of data.languages | keyvalue">
+      <ng-container *ngFor="let language of data?.languages">
         <div class="single-lang">
-          <span>{{language.key}}&nbsp;</span>
-          <span>({{language.value | number : '1.0-0'}}%)</span>
+          <span>{{language.name}}&nbsp;</span>
+          <span>({{language.percentage | number : '1.0-0'}}%)</span>
         </div>
       </ng-container>
     </div>
@@ -34,7 +38,7 @@
   <div class="repos row border-bottom">
     <div class="section-label col-3">Popular Repositories</div>
     <div class="section-data col-9">
-      <ng-container *ngFor="let repo of data.repositoriesDTO">
+      <ng-container *ngFor="let repo of data?.repositoriesDTO">
         <div class="single-repo border-bottom py-2">
           <div class="repo-header">
             <div class="right-side">
@@ -52,7 +56,7 @@
   <div class="contributions row py-2 my-2 border-bottom">
     <div class="section-label col-3">Contributions</div>
     <div class="section-data col-9">
-      <ng-container *ngFor="let cont of data.contributionsDTOs">
+      <ng-container *ngFor="let cont of data?.contributionsDTOs">
         <div class="single-cont d-flex">
           <h4 class="d-inline-flex">{{cont.contributedTo}}</h4>
           <h6 class="d-inline-flex mx-3">{{cont.commitNum}} &nbsp; commits</h6>
@@ -64,7 +68,7 @@
   <div class="organizations row py-2 my-2 border-bottom">
     <div class="section-label col-3">Organizations</div>
     <div class="section-data col-9">
-      <ng-container *ngFor="let org of data.organizationDTOs">
+      <ng-container *ngFor="let org of data?.organizationDTOs">
         <div class="single-cont d-flex">
           <h4 class="d-flex">{{org.loginName}}</h4>
           <h6 class="d-flex">&nbsp; &nbsp;{{org.description}}</h6>
@@ -78,7 +82,7 @@
     <div class="section-data col-9">
       This résumé is generated automatically using public information from the developer's GitHub account. The
       repositories are ordered by popularity based on a very simple popularity heuristic that defines the popularity of
-      a repository by its sum of watchers and forks. Do not hesitate to visit <a [href]="data.profileUrl">Chris Wanstrath's GitHub page</a> for a
+      a repository by its sum of watchers and forks. Do not hesitate to visit <a [href]="data?.profileUrl">Chris Wanstrath's GitHub page</a> for a
       complete work history.
     </div>
   </div>

@@ -9,7 +9,7 @@ import {ResumeService} from '../resume.service';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  url: string | undefined;
+  userName: string | undefined;
 
   constructor(private router: Router, private http: HttpClient, private service: ResumeService) {
   }
@@ -18,8 +18,8 @@ export class LandingComponent implements OnInit {
   }
 
   generate(): void {
-    // URL is the link typed in the input
-    this.http.request('GET', `${this.url}`).subscribe((res: any) => {
+    const baseUrl = 'http://localhost:8080/api/buildResume/';
+    this.http.request('GET', `${baseUrl}${this.userName}`).subscribe((res: any) => {
       this.service.data = res;
       this.router.navigate(['/resume']);
     }, error => {
@@ -28,6 +28,6 @@ export class LandingComponent implements OnInit {
   }
 
   change(e: any): void {
-    this.url = e;
+    this.userName = e;
   }
 }

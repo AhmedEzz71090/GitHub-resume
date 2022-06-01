@@ -324,20 +324,40 @@ export class ResumeComponent implements OnInit {
       {loginName: 'Login Name', description: 'lorem ipsum'},
       {loginName: 'Login Name', description: 'lorem ipsum'}
     ],
-    languages: {
-      CoffeeScript: 3.3333333,
-      null: 10.0,
-      JavaScript: 16.666666,
-      'Objective-C': 3.3333333,
-      Ruby: 56.666668,
-      'Emacs Lisp': 10.0
-    }
+    languages: [
+      {
+        name: 'coffeeScript',
+        percentage: 3.3333333
+      },
+      {
+        name: 'typeScript',
+        percentage: 10.0
+      },
+      {
+        name: 'javaScript',
+        percentage: 16.666666
+      },
+      {
+        name: 'objectiveC',
+        percentage: 3.3333333
+      },
+      {
+        name: 'ruby',
+        percentage: 56.666668
+      },
+      {
+        name: 'emacsLisp',
+        percentage: 10.0
+      }
+    ]
   };
 
+  // data: any | undefined;
   constructor(public service: ResumeService) {
   }
 
   ngOnInit(): void {
-    console.log(this.service.data);
+    // this.data = this.service?.data[0];
+    console.log(this.data);
   }
 }
