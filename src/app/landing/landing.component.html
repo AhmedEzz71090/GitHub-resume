@@ -12,7 +12,7 @@
   <div class="input-group mb-3 row">
     <input type="text" class="form-control col-10" placeholder="Enter your GitHub username and click on generate"
            aria-label="Username" aria-describedby="basic-addon1" [ngModel]="userName" (ngModelChange)="change($event)">
-    <button type="button" class="btn btn-dark col-2" (click)="generate()">Generate</button>
+    <button type="button" class="btn btn-dark col-2" (click)="generate()" [disabled]="disabled">Generate</button>
   </div>
 
   <div class="popular-users">
